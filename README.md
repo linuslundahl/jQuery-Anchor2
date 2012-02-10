@@ -4,6 +4,10 @@ jQuery Anchor^2 is a simple jQuery plugin which scrolls to the the ID of a hashe
 
 Get the latest version at [GitHub](https://github.com/linuslundahl/jQuery-Anchor2).
 
+[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=linuslundahl&url=https://github.com/linuslundahl/jQuery-Anchor2&title=jQuery Anchor2&language=&tags=github&category=software)
+
+See demo.html for example usage, the demo also includes [Sticky](http://labs.anthonygarand.com/sticky/) and [ScrollSpy](http://twitter.github.com/bootstrap/javascript.html#scrollspy).
+
 Usage
 -----
 

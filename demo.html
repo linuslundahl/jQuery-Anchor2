@@ -8,13 +8,25 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
   <script src="jquery.anchor.js" type="text/javascript"></script>
+  <script src="jquery.sticky.js" type="text/javascript"></script>
+  <script src="bootstrap-scrollspy.js" type="text/javascript"></script>
 
   <script type="text/javascript">
     (function ($) {
       $(function () {
+        // Add sticky
+        $("#navbar").sticky({
+          className: 'sticky'
+        });
+
+        // Add scrollspy
+        $('#navbar').scrollspy();
+
         $('a').anchorAnimate({
+          offset: 32,
           specOffset: {
-            headline2: -100
+            headline1: 100,
+            headline3: -100
           }
         });
       });
@@ -26,25 +38,29 @@
     a { color: #333; font-weight: bold; outline: none; text-decoration: none; }
     h1 { color: #cc3c3c; font-size: 2.5em; text-transform: none; letter-spacing: -3px; word-spacing: -3px; margin: 0; padding: 0; }
     #container { margin: 0 auto; width: 640px; }
-    ul.menu { color: #aaa; font-size: .75em; list-style: none; margin: 0; padding: 0; }
-    ul.menu li { display: inline; }
-    ul.menu li:after { content: ' | '; }
-    ul.menu li:last-child:after { content: ''; }
+    #navbar { background: #ccc; color: #aaa; font-size: .75em; list-style: none; margin: 0; padding: 10px 0; }
+    #navbar .nav { margin: 0; padding: 0; }
+    #navbar .nav li { display: inline; }
+    #navbar .nav li:after { content: ' | '; }
+    #navbar .nav li:last-child:after { content: ''; }
+    #navbar .nav li.active a { color: #cc3c3c }
   </style>
 </head>
-<body>
-
+<body data-spy="scroll">
 
 <div id="container">
   <h1>jQuery Anchor&sup2;</h1>
 
-  <ul class="menu">
-    <li><a href="#headline2">Offset -100</a></li>
-    <li><a href="#headline3">Regular</a></li>
-    <li><a href="index.html#headline4">Absolute</a></li>
-    <li><a href="#headline5">No ID</a></li>
-    <li><a href="http://unwi.se/">No anchor</a></li>
-  </ul>
+  <div id="navbar">
+    <ul class="nav">
+      <li class="active"><a href="#headline1">Offset 100</a></li>
+      <li><a href="#headline2">Regular</a></li>
+      <li><a href="#headline3">Offset -100</a></li>
+      <li><a href="#headline4">Regular</a></li>
+      <li><a href="#headline5">No ID</a></li>
+      <li><a href="http://unwi.se/">No anchor</a></li>
+    </ul>
+  </div>
 
   <h2 id="headline1">Headline 1</h2>
   <p>Donec ac velit turpis, rhoncus gravida leo. Sed aliquet cursus nisl a interdum. Maecenas egestas, tortor fringilla congue euismod, diam ipsum posuere nunc, a fringilla felis diam quis nunc. Cras eget odio tellus. In velit felis, egestas ac dignissim ac, tincidunt nec lacus. Praesent lacus erat, dapibus id fermentum ut, varius id ante. Sed nec ligula massa. Mauris auctor convallis gravida. Nulla facilisi. Cras egestas viverra tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
