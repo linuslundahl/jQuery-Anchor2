@@ -1,7 +1,7 @@
 /**
  *
- * jQuery Anchor² (http://github.com/linuslundahl/jquery.anchor.js)
- * Version: 0.1
+ * jQuery Anchor² (https://github.com/linuslundahl/jQuery-Anchor2)
+ * Version: 0.2
  *
  * By Linus Lundahl (http://unwi.se/)
  *
@@ -14,14 +14,14 @@
  *
  */
 
-var $j = jQuery.noConflict();
-
 (function ($) {
+  'use strict';
+
   $(function () {
     $("a.anchorLink").anchorAnimate();
   });
 
-  $.fn.anchorAnimate = function(settings) {
+  $.fn.anchorAnimate = function (settings) {
     settings = $.extend({
       speed: 400,
       offset: 0,
@@ -29,18 +29,12 @@ var $j = jQuery.noConflict();
       showHash: false
     }, settings);
 
-    return $(this).each(function (e){
-      var $caller = $(this),
-          ret = true;
-
-      $caller.click(function (event) {
-        var locationHref = window.location.href,
-            elementHash = this.hash,
-            $elementClick = $(elementHash),
-            elementKey = elementHash.replace('#', ''),
-            destination;
-
-        ret = true;
+    return $(this).on('click', function () {
+      var ret = true,
+          elementHash = this.hash,
+          $elementClick = $(elementHash),
+          elementKey = elementHash.replace('#', ''),
+          destination;
 
         if (elementHash.length && $elementClick.length) {
           event.preventDefault();
@@ -53,13 +47,11 @@ var $j = jQuery.noConflict();
               window.location.hash = elementHash;
             }
           });
-
           ret = false;
         }
 
         return ret;
       });
-    });
-  };
 
-}($j));
+  };
+}(jQuery.noConflict()));

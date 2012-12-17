@@ -6,10 +6,10 @@
 
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-  <script src="jquery.anchor.js" type="text/javascript"></script>
-  <script src="jquery.sticky.js" type="text/javascript"></script>
-  <script src="bootstrap-scrollspy.js" type="text/javascript"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
+  <script src="jquery.anchor.min.js" type="text/javascript"></script>
+  <script src="https://raw.github.com/garand/sticky/master/jquery.sticky.js" type="text/javascript"></script>
+  <script src="https://raw.github.com/twitter/bootstrap/master/js/bootstrap-scrollspy.js" type="text/javascript"></script>
 
   <script type="text/javascript">
     (function ($) {
@@ -19,9 +19,7 @@
           className: 'sticky'
         });
 
-        // Add scrollspy
-        $('#navbar').scrollspy();
-
+        // Initiate jQuery Anchor
         $('a').anchorAnimate({
           offset: 32,
           specOffset: {
@@ -38,7 +36,7 @@
     a { color: #333; font-weight: bold; outline: none; text-decoration: none; }
     h1 { color: #cc3c3c; font-size: 2.5em; text-transform: none; letter-spacing: -3px; word-spacing: -3px; margin: 0; padding: 0; }
     #container { margin: 0 auto; width: 640px; }
-    #navbar { background: #ccc; color: #aaa; font-size: .75em; list-style: none; margin: 0; padding: 10px 0; }
+    #navbar { background: #ccc; color: #aaa; font-size: .75em; list-style: none; margin: 0; padding: 10px 0; width: 640px; }
     #navbar .nav { margin: 0; padding: 0; }
     #navbar .nav li { display: inline; }
     #navbar .nav li:after { content: ' | '; }

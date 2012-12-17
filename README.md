@@ -8,6 +8,8 @@ Get the latest version at [GitHub](https://github.com/linuslundahl/jQuery-Anchor
 
 See demo.html for example usage, the demo also includes [Sticky](http://labs.anthonygarand.com/sticky/) and [ScrollSpy](http://twitter.github.com/bootstrap/javascript.html#scrollspy).
 
+Requires jQuery 1.7
+
 Usage
 -----
 
