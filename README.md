@@ -8,6 +8,8 @@ Get the latest version at [GitHub](https://github.com/linuslundahl/jQuery-Anchor
 
 See demo.html for example usage, the demo also includes [Sticky](http://labs.anthonygarand.com/sticky/) and [ScrollSpy](http://twitter.github.com/bootstrap/javascript.html#scrollspy).
 
+Version 0.2.1
+
 Requires jQuery 1.7
 
 Usage
@@ -43,7 +45,7 @@ You can add a few settings to the script.
 
 	speed: 		400 	(int)		(The scroll speed)
 	offset: 	0 		(int)		(Offset the scroll position by X pixels)
-	specOffset:	{}		(object)	(A list of hashes to offset X pixels)
+	elOffset:	{}		(object)	(A list of hashes to offset X pixels)
 	showHash: 	false 	(bool)		(Show/Hide the hash in the browser location bar)
 
 License

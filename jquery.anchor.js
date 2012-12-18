@@ -1,7 +1,7 @@
 /**
  *
  * jQuery Anchor² (https://github.com/linuslundahl/jQuery-Anchor2)
- * Version: 0.2
+ * Version: 0.2.1
  *
  * By Linus Lundahl (http://unwi.se/)
  *
@@ -25,33 +25,25 @@
     settings = $.extend({
       speed: 400,
       offset: 0,
-      specOffset: {},
+      elOffset: {},
       showHash: false
     }, settings);
 
     return $(this).on('click', function () {
-      var ret = true,
-          elementHash = this.hash,
-          $elementClick = $(elementHash),
-          elementKey = elementHash.replace('#', ''),
-          destination;
+      var $el = $(this.hash),
+          key = this.hash.replace('#', ''),
+          y;
 
-        if (elementHash.length && $elementClick.length) {
-          event.preventDefault();
-          destination = $elementClick.offset().top - settings.offset;
-          if (elementKey in settings.specOffset) {
-            destination = destination + settings.specOffset[elementKey];
-          }
-          $("html:not(:animated),body:not(:animated)").animate({ scrollTop: destination}, settings.speed, function() {
-            if (settings.showHash) {
-              window.location.hash = elementHash;
-            }
-          });
-          ret = false;
+      if (this.hash.length && $el.length) {
+        y = $el.offset().top - settings.offset;
+        if (key in settings.elOffset) {
+          y = y + settings.elOffset[key];
         }
+        $("html:not(:animated),body:not(:animated)").animate({ scrollTop: y }, settings.speed);
+      }
 
-        return ret;
-      });
+      return settings.showHash;
+    });
 
   };
 }(jQuery.noConflict()));
