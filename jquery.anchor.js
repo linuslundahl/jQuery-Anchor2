@@ -40,9 +40,9 @@
           y = y + settings.elOffset[key];
         }
         $("html:not(:animated),body:not(:animated)").animate({ scrollTop: y }, settings.speed);
-      }
 
-      return settings.showHash;
+        return settings.showHash;
+      }
     });
 
   };
