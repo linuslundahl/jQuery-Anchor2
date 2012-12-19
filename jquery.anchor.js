@@ -29,19 +29,25 @@
       showHash: false
     }, settings);
 
-    return $(this).on('click', function () {
+    return $(this).on('click', function (e) {
       var $el = $(this.hash),
           key = this.hash.replace('#', ''),
           y;
 
       if (this.hash.length && $el.length) {
+        e.preventDefault();
+
         y = $el.offset().top - settings.offset;
         if (key in settings.elOffset) {
           y = y + settings.elOffset[key];
         }
         $("html:not(:animated),body:not(:animated)").animate({ scrollTop: y }, settings.speed);
 
-        return settings.showHash;
+        if (settings.showHash) {
+          window.location.hash = this.hash;
+        }
+
+        return false;
       }
     });
 
